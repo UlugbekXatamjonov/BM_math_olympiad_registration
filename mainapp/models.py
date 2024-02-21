@@ -30,6 +30,3 @@ class Contact(models.Model):
         return self.full_name
     
     
-    
-    
-    
