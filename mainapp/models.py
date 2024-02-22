@@ -3,8 +3,6 @@ from autoslug import AutoSlugField
 
 # Create your models here.
 GROUP = (
-    ("1", '1'),
-    ("2", "2"),
     ("3", "3"),
     ("4", "4"),
     ("5", "5"),
