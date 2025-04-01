@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework',
     "corsheaders",
+    'import_export',
     
     # local apps
     "mainapp",
@@ -171,3 +172,16 @@ CORS_ALLOW_METHODS = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 # -----  Cors origin settings ------
+
+
+
+
+
+# -----  Excel export settings ------
+from import_export.formats.base_formats import XLSX
+IMPORT_EXPORT_FORMATS = [XLSX] # aynan excel fotmatiga o'tkazish uchun kerak ❗ Agar boshqa format kerak bo'sa buni o'chirib qo'yish kerak
+
+
+
+
+

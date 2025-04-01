@@ -3,8 +3,8 @@ from autoslug import AutoSlugField
 
 # Create your models here.
 GROUP = (
-    ("3", "3"),
-    ("4", "4"),
+    # ("3", "3"),
+    # ("4", "4"),
     ("5", "5"),
     ("6", "6"),
     ("7", "7"),
@@ -19,7 +19,7 @@ class Contact(models.Model):
     slug = AutoSlugField(populate_from = 'full_name', unique=True)
     group = models.CharField(max_length=255, verbose_name="Sinfi", choices=GROUP)
     school = models.CharField(max_length=255, verbose_name="Maktabi")
-    phone_number = models.CharField(max_length=255, verbose_name="Tel. raqami")
+    phone_number = models.CharField(max_length=255, verbose_name="Tel. raqami", unique=True)
     
     status = models.BooleanField(default=False, verbose_name="Holati")
     created_on = models.DateTimeField(auto_now_add=True)

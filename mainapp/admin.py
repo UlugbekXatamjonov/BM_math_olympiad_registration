@@ -1,12 +1,23 @@
+from importlib import resources
 from django.contrib import admin
+
+
 from .models import Contact
 
-# Register your models here.
-@admin.register(Contact)
-class Contact_Admin(admin.ModelAdmin):
-    list_display = ('full_name', 'group','school', 'phone_number','status', 'created_on')
-    list_filter = ('group', 'status', 'created_on')
-    search_fields = ('full_name','school', 'phone_number')
-    list_editable = ('status', )
-    
 
+from import_export.admin import ImportExportModelAdmin
+from import_export import resources
+
+
+class ContactResource(resources.ModelResource):
+
+    class Meta:
+        model = Contact
+        fields = ('full_name', 'group', 'school', 'phone_number', 'created_on' )
+
+
+@admin.register(Contact)
+class ContactAdmin(ImportExportModelAdmin):
+    resource_classes = [ContactResource]
+    
+    
