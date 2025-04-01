@@ -159,6 +159,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8080',
     'http://localhost:8001',
     'http://localhost:800',
+    'https://bmmatholim.pythonanywhere.com',
 )
 
 CORS_ALLOW_METHODS = [
